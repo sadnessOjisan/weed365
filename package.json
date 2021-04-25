@@ -1,0 +1,25 @@
+{
+  "name": "weed365",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sadnessOjisan/weed365.git",
+  "author": "sadness_ojisan <sadness.ojisan@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "example": "yarn workspace example",
+    "lib": "yarn workspace lib"
+  },
+  "dependencies": {
+    "eslint": "^7.25.0",
+    "prettier": "^2.2.1",
+    "ts-loader": "^9.1.1",
+    "typescript": "^4.2.4",
+    "webpack": "^5.35.1",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
