@@ -3,9 +3,7 @@ name: dev
 on:
   push:
     branches:
-      - "*"
-      - "**/*"
-      - "!main"
+      - "main
 
 jobs:
   dev:
@@ -29,4 +27,4 @@ jobs:
       - name: format
         run: yarn run format
       - name: build
-        run: yarn run lib run build:stg
+        run: yarn run lib run build:prd
