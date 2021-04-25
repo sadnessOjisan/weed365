@@ -13,4 +13,4 @@ class SimpleClock extends HTMLElement {
   }
 }
 
-customElements.define("simple-clock", SimpleClock);
+customElements.define("weed-365", SimpleClock);
