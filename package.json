@@ -11,10 +11,17 @@
   ],
   "scripts": {
     "example": "yarn workspace example",
-    "lib": "yarn workspace lib"
+    "lib": "yarn workspace lib",
+    "lint:fix": "eslint --fix '**/src/**/*.{ts,tsx,js,jsx,json,md}'",
+    "lint": "eslint '**/src/**/*.{ts,tsx,js,jsx,json,md}'",
+    "format:fix": "prettier --write '**/src/**/*.{ts,tsx,js,jsx,json,md}'",
+    "format": "prettier --check '**/src/**/*.{ts,tsx,js,jsx,json,md}'"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
     "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
     "prettier": "^2.2.1",
     "ts-loader": "^9.1.1",
     "typescript": "^4.2.4",
