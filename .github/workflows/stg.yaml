@@ -28,7 +28,5 @@ jobs:
         run: yarn run lint
       - name: format
         run: yarn run format
-      - name: test
-        run: yarn run test
       - name: build
-        run: yarn run lib run build:dev
+        run: yarn run lib run build:stg
