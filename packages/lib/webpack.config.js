@@ -4,7 +4,7 @@ module.exports = {
   mode: process.env.NODE_ENV || "production",
   entry: "./src/index.ts",
   output: {
-    path: path.resolve(__dirname, "./lib"),
+    path: path.resolve(__dirname, "./dist"),
     filename: "build.js",
   },
   module: {

@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "example": "yarn workspace example",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc -p . --noEmit",
     "lib": "yarn workspace lib",
     "lint:fix": "eslint --fix '**/src/**/*.{ts,tsx,js,jsx,json,md}'",
     "lint": "eslint '**/src/**/*.{ts,tsx,js,jsx,json,md}'",

@@ -1,4 +1,4 @@
-class SimpleClock extends HTMLElement {
+class Weed365 extends HTMLElement {
   shadow;
   constructor() {
     super();
@@ -13,4 +13,4 @@ class SimpleClock extends HTMLElement {
   }
 }
 
-customElements.define("weed-365", SimpleClock);
+customElements.define("weed-365", Weed365);
