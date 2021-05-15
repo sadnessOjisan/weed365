@@ -4005,10 +4005,10 @@ websocket-extensions@>=0.1.1:
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.4.tgz#7f8473bc839dfd87608adb95d7eb075211578a42"
   integrity sha512-OqedPIGOfsDlo31UNwYbCFMSaO9m9G/0faIHj5/dZFDMFqPTcx6UwqyOy3COEaEOg/9VsGIpdqn62W5KhoKSpg==
 
-weedize@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/weedize/-/weedize-0.0.4.tgz#3e080c4821b82c2bc89af4234040524f76b114b5"
-  integrity sha512-qk8mmTsQGphS8HfjH3UQ9+fhWiVd6mTxA5GpZy+NIM8HXztPslpDBkrrYWu0ia4PSuhCxUQNPLLxDOAwVCKi9Q==
+weedize@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/weedize/-/weedize-0.1.0.tgz#d1cf8e1019d8b2d08442ff2b65cd6d3bb92e24e5"
+  integrity sha512-OE+3QiEq3/Tad6cIc8Sc/esChTqhXaXoq7prjxdzj55RNkgX7xMd6ElfSO1PQGYmhKcadJDrkS251yvPigfaoA==
 
 which-module@^2.0.0:
   version "2.0.0"

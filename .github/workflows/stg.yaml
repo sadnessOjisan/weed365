@@ -1,25 +1,20 @@
-name: dev
-
 on:
   push:
     branches:
-      - "main
-
+      - "main"
 jobs:
-  dev:
-    name: check version, add tag and release
+  staging:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v2
-      - name: setup Node
+      - uses: actions/checkout@v2
+      - name: Use Node.js
         uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-          registry-url: "https://registry.npmjs.org"
-      - name: install
+      - name: Install npm packages
         run: |
           yarn install
+      - name: Can Publish
+        working-directory: ./packages/lib
+        run: yarn can-npm-publish --verbose
       - name: typecheck
         run: yarn run typecheck
       - name: lint
