@@ -37,12 +37,15 @@ class Weed365 extends HTMLElement {
         flex-direction: column;
       }
       .day{
-        width: 20px;
-        height: 20px;
-        background: green;
+        width: 11px;
+        height: 11px;
+        background: rgb(33 110 57);
+        margin-top: 6px;
+        margin-left: 6px;
+        outline: 1px solid hsl(210deg 13% 12% / 6%);
       }
       .empty {
-        background: gray;
+        background: #ebedf0;
       }
       </style>
       <div class="month">
