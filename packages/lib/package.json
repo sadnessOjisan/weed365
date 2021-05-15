@@ -1,6 +1,6 @@
 {
   "name": "lib",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "lib/build.js",
   "license": "MIT",
   "scripts": {
@@ -8,6 +8,9 @@
     "build:prd": "NODE_ENV=production webpack"
   },
   "dependencies": {
-    "weedize": "^0.0.4"
-  }
+    "weedize": "^0.1.0"
+  },
+  "files": [
+    "dist/build.js"
+  ]
 }
