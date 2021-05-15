@@ -1,13 +1,13 @@
-import { weedize } from "weedize";
+import { weedizeTo } from "weedize";
 
 class Weed365 extends HTMLElement {
   shadow: ShadowRoot;
   constructor() {
     super();
-    const start = this.getAttribute("start");
-    if (start === null) throw new Error("should set start");
+    const endDate = this.getAttribute("date");
+    if (endDate === null) throw new Error("should set endDate");
 
-    const layout = weedize(new Date(start));
+    const layout = weedizeTo(new Date(endDate));
 
     console.log(layout);
     const kusasString = this.getAttribute("kusas");
@@ -39,12 +39,14 @@ class Weed365 extends HTMLElement {
       .day{
         width: 11px;
         height: 11px;
-        background: rgb(33 110 57);
         margin-top: 6px;
         margin-left: 6px;
         outline: 1px solid hsl(210deg 13% 12% / 6%);
       }
-      .empty {
+      .fill {
+        background: rgb(33 110 57);
+      }
+      .zero {
         background: #ebedf0;
       }
       </style>
@@ -56,10 +58,10 @@ class Weed365 extends HTMLElement {
           ${week
             .map(
               (day) =>
-                `<div class="day ${
-                  day === undefined || day.value === 0 ? "empty" : ""
+                `<div class="day ${day === undefined ? "empty" : "fill"} ${
+                  day !== undefined && day.value === 0 ? "zero" : ""
                 }" style="opacity: ${
-                  day === undefined || day.value === 0 ? 1 : day.value
+                  day === undefined ? 0 : day.value === 0 ? 1 : day.value
                 };"></div>`
             )
             .join(" ")}
