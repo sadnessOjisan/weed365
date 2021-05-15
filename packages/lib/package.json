@@ -1,0 +1,10 @@
+{
+  "name": "lib",
+  "version": "1.0.0",
+  "main": "lib/build.js",
+  "license": "MIT",
+  "scripts": {
+    "build:dev": "NODE_ENV=development webpack",
+    "build:prd": "NODE_ENV=production webpack"
+  }
+}

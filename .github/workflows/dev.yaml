@@ -1,0 +1,32 @@
+name: dev
+
+on:
+  push:
+    branches:
+      - "*"
+      - "**/*"
+      - "!main"
+
+jobs:
+  dev:
+    name: check version, add tag and release
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+          registry-url: "https://registry.npmjs.org"
+      - name: install
+        run: |
+          yarn install
+      - name: typecheck
+        run: yarn run typecheck
+      - name: lint
+        run: yarn run lint
+      - name: format
+        run: yarn run format
+      - name: build
+        run: yarn run lib run build:dev
