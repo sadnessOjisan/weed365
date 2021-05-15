@@ -28,6 +28,6 @@ jobs:
         run: yarn run lib run build:prd
       - name: release
         run: npm publish
-        working-directory: ./packages/lib
+        working-directory: ./packages/weed365
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
