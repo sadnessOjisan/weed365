@@ -17,7 +17,7 @@ jobs:
         run: |
           yarn install
       - name: Can Publish
-        working-directory: ./packages/lib
+        working-directory: ./packages/weed365
         run: yarn can-npm-publish --verbose
       - name: typecheck
         run: yarn run typecheck
