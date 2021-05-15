@@ -6,5 +6,8 @@
   "scripts": {
     "build:dev": "NODE_ENV=development webpack",
     "build:prd": "NODE_ENV=production webpack"
+  },
+  "dependencies": {
+    "weedize": "^0.0.4"
   }
 }
