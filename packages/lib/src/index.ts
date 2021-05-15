@@ -1,6 +1,11 @@
+// @ts-ignore
+import { weedize } from "weedize";
+
 class Weed365 extends HTMLElement {
   shadow;
   constructor() {
+    const layout = weedize(new Date("2021-01-01"));
+    console.log(layout);
     super();
     // 1. HTMLから分離されたノード(ShadowDOM)を作成する。
     //    これで、親のドキュメントのCSSなどに影響されない環境を作成できます。
