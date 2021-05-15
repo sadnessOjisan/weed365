@@ -7,5 +7,5 @@ GitHub weed style Web Components
 ```sh
 yarn lib run build:dev
 
-open packages/example/index.html
+open packages/debug/index.html
 ```
