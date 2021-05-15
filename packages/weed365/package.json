@@ -1,7 +1,7 @@
 {
-  "name": "lib",
-  "version": "0.0.1",
-  "main": "lib/build.js",
+  "name": "weed365",
+  "version": "0.0.2",
+  "main": "dist/build.js",
   "license": "MIT",
   "scripts": {
     "build:dev": "NODE_ENV=development webpack",
