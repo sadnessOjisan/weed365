@@ -8,6 +8,6 @@
     "build:prd": "NODE_ENV=production webpack"
   },
   "dependencies": {
-    "weedize": "^0.0.1"
+    "weedize": "^0.0.4"
   }
 }
