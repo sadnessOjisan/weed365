@@ -9,3 +9,9 @@ yarn lib run build:dev
 
 open packages/debug/index.html
 ```
+
+## build
+
+```
+yarn lib run build:prd
+```
