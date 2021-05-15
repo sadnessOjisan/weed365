@@ -28,11 +28,41 @@ class Weed365 extends HTMLElement {
     });
     this.shadow = this.attachShadow({ mode: "open" });
     this.shadow.innerHTML = `
-      <style></style>
-      <div class="kusas">
-        ${kusaLayout.map((week) =>
-          week.map((day) => `<div>${JSON.stringify(day)}</div>`)
-        )}
+      <style>
+      .month{
+        display:flex;
+      }
+      .week{
+        display: flex;
+        flex-direction: column;
+      }
+      .day{
+        width: 20px;
+        height: 20px;
+        background: green;
+      }
+      .empty {
+        background: gray;
+      }
+      </style>
+      <div class="month">
+        ${kusaLayout
+          .map(
+            (week) =>
+              `<div class="week">
+          ${week
+            .map(
+              (day) =>
+                `<div class="day ${
+                  day === undefined || day.value === 0 ? "empty" : ""
+                }" style="opacity: ${
+                  day === undefined || day.value === 0 ? 1 : day.value
+                };"></div>`
+            )
+            .join(" ")}
+          </div>`
+          )
+          .join(" ")}
       </div>
     `;
   }
