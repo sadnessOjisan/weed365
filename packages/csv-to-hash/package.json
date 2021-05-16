@@ -1,0 +1,10 @@
+{
+  "name": "csv-to-hash",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "csv": "^5.5.0",
+    "fs": "^0.0.1-security"
+  }
+}
