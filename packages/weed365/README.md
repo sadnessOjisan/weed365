@@ -39,7 +39,7 @@ The implementation is below.
         "2021-05-14": 23,
       }'
     ></weed-365>
-    <script src="https://cdn.jsdelivr.net/npm/weed365@0.0.3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/weed365@0.0.4"></script>
   </body>
 </html>
 ```

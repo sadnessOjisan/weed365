@@ -32,10 +32,12 @@ class Weed365 extends HTMLElement {
           o = 0.5;
         } else if (value / max < 0.75 && value / max >= 0.5) {
           o = 0.75;
-        } else {
+        } else if ((value / max <= 1 && value / max >= 0.75) || value === 0) {
           o = 1;
+        } else {
+          console.error("value", value);
         }
-        return { date: YYYYMMDD, value: o };
+        return { date: YYYYMMDD, value: o, isZero: value === 0 };
       });
     });
     this.shadow = this.attachShadow({ mode: "open" });
@@ -71,7 +73,7 @@ class Weed365 extends HTMLElement {
             .map(
               (day) =>
                 `<div class="day ${day === undefined ? "empty" : "fill"} ${
-                  day !== undefined && day.value === 0 ? "zero" : ""
+                  day !== undefined && day.isZero ? "zero" : ""
                 }" style="opacity: ${
                   day === undefined ? 0 : day.value === 0 ? 1 : day.value
                 };"></div>`
