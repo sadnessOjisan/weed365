@@ -29,7 +29,17 @@ class Weed365 extends HTMLElement {
           .toString()
           .padStart(2, "0")}-${date.getDate().toString().padStart(2, "0")}`;
         const value = kusas[YYYYMMDD] ?? 0;
-        return { date: dateString, value: value / max };
+        let o;
+        if (value / max < 0.25 && value / max > 0) {
+          o = 0.25;
+        } else if (value / max < 0.5 && value / max >= 0.25) {
+          o = 0.5;
+        } else if (value / max < 0.75 && value / max >= 0.5) {
+          o = 0.75;
+        } else {
+          o = 1;
+        }
+        return { date: dateString, value: o };
       });
     });
     this.shadow = this.attachShadow({ mode: "open" });
