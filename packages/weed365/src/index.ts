@@ -26,7 +26,7 @@ class Weed365 extends HTMLElement {
           .padStart(2, "0")}-${date.getDate().toString().padStart(2, "0")}`;
         const value = kusas[YYYYMMDD] ?? 0;
         let o;
-        if (value / max < 0.25 && value / max > 0) {
+        if (value / max < 0.25 && value / max >= 0) {
           o = 0.25;
         } else if (value / max < 0.5 && value / max >= 0.25) {
           o = 0.5;
