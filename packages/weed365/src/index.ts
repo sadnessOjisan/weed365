@@ -9,12 +9,14 @@ class Weed365 extends HTMLElement {
 
     const layout = weedizeTo(new Date(endDate));
 
-    console.log(layout);
     const kusasString = this.getAttribute("kusas");
     if (kusasString === null) throw new Error("should set kusasString");
     const kusas = JSON.parse(kusasString);
     const values = (Object.values(kusas) as any) as number[]; // TODO: validation
-    const max = values.reduce((a, b) => Math.max(a, b));
+    const max = values.reduce((a, b) => {
+      const max = Math.max(a, b);
+      return max;
+    });
     const kusaLayout = layout.map((week) => {
       return week.map((dateString) => {
         if (dateString === undefined) return undefined;
@@ -23,7 +25,17 @@ class Weed365 extends HTMLElement {
           .toString()
           .padStart(2, "0")}-${date.getDate().toString().padStart(2, "0")}`;
         const value = kusas[YYYYMMDD] ?? 0;
-        return { date: dateString, value: value / max };
+        let o;
+        if (value / max < 0.25 && value / max > 0) {
+          o = 0.25;
+        } else if (value / max < 0.5 && value / max >= 0.25) {
+          o = 0.5;
+        } else if (value / max < 0.75 && value / max >= 0.5) {
+          o = 0.75;
+        } else {
+          o = 1;
+        }
+        return { date: YYYYMMDD, value: o };
       });
     });
     this.shadow = this.attachShadow({ mode: "open" });
