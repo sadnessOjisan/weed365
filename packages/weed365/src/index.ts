@@ -9,12 +9,18 @@ class Weed365 extends HTMLElement {
 
     const layout = weedizeTo(new Date(endDate));
 
-    console.log(layout);
     const kusasString = this.getAttribute("kusas");
     if (kusasString === null) throw new Error("should set kusasString");
     const kusas = JSON.parse(kusasString);
     const values = (Object.values(kusas) as any) as number[]; // TODO: validation
-    const max = values.reduce((a, b) => Math.max(a, b));
+    const max = values.reduce((a, b) => {
+      const max = Math.max(a, b);
+      if (isNaN(max)) {
+        console.log("a, b", a, b);
+      }
+      return max;
+    });
+    console.log(max);
     const kusaLayout = layout.map((week) => {
       return week.map((dateString) => {
         if (dateString === undefined) return undefined;
