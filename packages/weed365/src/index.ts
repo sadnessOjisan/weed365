@@ -15,9 +15,6 @@ class Weed365 extends HTMLElement {
     const values = (Object.values(kusas) as any) as number[]; // TODO: validation
     const max = values.reduce((a, b) => {
       const max = Math.max(a, b);
-      if (isNaN(max)) {
-        console.log("a, b", a, b);
-      }
       return max;
     });
     const kusaLayout = layout.map((week) => {
@@ -41,7 +38,6 @@ class Weed365 extends HTMLElement {
         return { date: YYYYMMDD, value: o };
       });
     });
-    console.log(JSON.stringify(kusaLayout));
     this.shadow = this.attachShadow({ mode: "open" });
     this.shadow.innerHTML = `
       <style>
