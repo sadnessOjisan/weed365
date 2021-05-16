@@ -20,7 +20,6 @@ class Weed365 extends HTMLElement {
       }
       return max;
     });
-    console.log(max);
     const kusaLayout = layout.map((week) => {
       return week.map((dateString) => {
         if (dateString === undefined) return undefined;
@@ -39,9 +38,10 @@ class Weed365 extends HTMLElement {
         } else {
           o = 1;
         }
-        return { date: dateString, value: o };
+        return { date: YYYYMMDD, value: o };
       });
     });
+    console.log(JSON.stringify(kusaLayout));
     this.shadow = this.attachShadow({ mode: "open" });
     this.shadow.innerHTML = `
       <style>

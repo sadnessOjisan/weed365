@@ -11,7 +11,7 @@ let res = csvSync(data);
 const result = {};
 
 res.forEach((d) => {
-  result[d[0]] = Number(d[1]);
+  result[d[0]] = Number(d[1]) / 7600000;
 });
 
 console.log(result);
