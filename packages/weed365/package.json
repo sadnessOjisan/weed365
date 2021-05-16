@@ -1,6 +1,6 @@
 {
   "name": "weed365",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/build.js",
   "license": "MIT",
   "scripts": {
