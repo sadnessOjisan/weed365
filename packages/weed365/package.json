@@ -1,6 +1,6 @@
 {
   "name": "weed365",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "GitHub weed style Web Components",
   "main": "dist/build.js",
   "license": "MIT",
