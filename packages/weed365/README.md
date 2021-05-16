@@ -1,8 +1,12 @@
 # weed365
 
-GitHub weed style's Web Components
+GitHub weed style's Web Components.
 
 ![イメージ図](./docs/visual.png)
+
+Example is [here](https://sadnessojisan.github.io/weed365/).
+
+The implementation is below.
 
 ```html
 <!DOCTYPE html>
@@ -39,3 +43,15 @@ GitHub weed style's Web Components
   </body>
 </html>
 ```
+
+## How to use
+
+Weed365 provides `<weed-365></weed-365>` tag.
+`<weed-365></weed-365>` tag takes those props.
+
+| name  | for what                                                                   |
+| ----- | -------------------------------------------------------------------------- |
+| date  | This is the end date of kusa layout.                                       |
+| kusas | `{YYYY-MM-DD: value}`. For example `{'2021-01-01: 100, '2021-01-02': 200}` |
+
+weed-365 paint color according to the kusa's value. If value is none, then kusa layout treat as 0.
